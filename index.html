@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramvir Singh — Software &amp; Web Developer | B.Tech CSE</title>
+  <meta name="description" content="Portfolio of Paramvir Singh — Software &amp; Web Developer (Python, C/C++, Frontend) and CS student based in Bhiwani, Haryana, India. B.Tech CSE @ TIT&amp;S Bhiwani, former Intern at Solitaire Infosystems.">
+  <meta name="author" content="Paramvir Singh">
+  <meta name="keywords" content="Paramvir Singh, Software Developer, Python, C++, Frontend Developer, TIT&amp;S Bhiwani, Solitaire Infosystems, Portfolio">
+
+  <!-- Open Graph / LinkedIn Sharing Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github-param-83-vir.github.io/portfolio/">
+  <meta property="og:title" content="Paramvir Singh — Software &amp; Web Developer">
+  <meta property="og:description" content="Interactive developer portfolio featuring 60fps design-tool animations, Python &amp; Web projects, and technical experience.">
+  <meta property="og:image" content="assets/photo.png">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paramvir Singh — Software &amp; Web Developer">
+  <meta name="twitter:description" content="Interactive developer portfolio featuring 60fps design-tool animations, Python &amp; Web projects, and technical experience.">
+  <meta name="twitter:image" content="assets/photo.png">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23e8412c'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===== LOAD INTRO OVERLAY (~2.7s, Click to Skip) ===== -->
+  <div class="intro-overlay" id="introOverlay" aria-hidden="true" title="Click to skip">
+    <div class="intro-red-line" aria-hidden="true"></div>
+    <div class="intro-spinner" id="introSpinner" aria-hidden="true"></div>
+    <div class="intro-tags" id="introTags" aria-hidden="true"></div>
+    <div class="intro-frames" id="introFrames" aria-hidden="true">
+      <div class="intro-frame frame-1">
+        <span class="frame-tag">Frame: Viewport · 1440 × 900</span>
+        <span class="bp-handle bp-tl"></span>
+        <span class="bp-handle bp-tr"></span>
+        <span class="bp-handle bp-bl"></span>
+        <span class="bp-handle bp-br"></span>
+      </div>
+      <div class="intro-frame frame-2">
+        <span class="frame-tag">Component: Paramvir Singh · CS Developer</span>
+        <span class="bp-handle bp-tl"></span>
+        <span class="bp-handle bp-tr"></span>
+        <span class="bp-handle bp-bl"></span>
+        <span class="bp-handle bp-br"></span>
+      </div>
+      <div class="intro-frame frame-3">
+        <span class="frame-tag">Section: Selected Projects [01-04]</span>
+        <span class="bp-handle bp-tl"></span>
+        <span class="bp-handle bp-tr"></span>
+        <span class="bp-handle bp-bl"></span>
+        <span class="bp-handle bp-br"></span>
+      </div>
+    </div>
+    <span class="intro-skip-hint">Click anywhere to skip</span>
+  </div>
+
+  <!-- Floating multiplayer cursors layer -->
+  <div class="cursor-layer" id="cursorLayer" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="logo-circle" aria-hidden="true"></span>PARAMVIR
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation" aria-hidden="true">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-text" id="heroBgText" aria-hidden="true">PORTFOLIO</div>
+      <div class="hero-photo" id="heroPhoto" data-selection="Portrait Layer · Paramvir">
+        <img src="assets/photo.png" alt="Paramvir Singh — Software Developer" id="heroImg" loading="eager">
+        <div class="photo-fallback" id="photoFallback">
+          <svg viewBox="0 0 200 280" fill="none" aria-hidden="true" width="110">
+            <circle cx="100" cy="80" r="38" fill="#161616" stroke="#2a2623" stroke-width="1.5"/>
+            <path d="M28 280C28 205 58 172 100 172C142 172 172 205 172 280" fill="#161616" stroke="#2a2623" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-hello">Hello, I'm</p>
+        <h1 class="hero-name selectable" id="heroName" data-selection="Hero Name">
+          <span class="mask-line"><span class="line-inner">PARAMVIR</span></span>
+          <span class="mask-line"><span class="line-inner">SINGH<span class="dot">.</span></span></span>
+        </h1>
+        <p class="hero-role">Software &amp; Web Developer | Python, C/C++, Frontend</p>
+        <div class="hero-badges">
+          <span class="hero-badge"><span class="badge-dot"></span> Open to Internships &amp; Roles</span>
+          <span class="hero-badge">📍 Bhiwani, Haryana, India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section class="work" id="work">
+      <div class="container">
+        <p class="section-label reveal"><span class="label-line" aria-hidden="true"></span>Selected Work</p>
+        <div class="work-grid" id="workGrid"><!-- Rendered from PROJECTS array in main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="proof" aria-label="Key statistics">
+      <div class="container proof-grid">
+        <div class="stat reveal">
+          <div class="stat-num" data-count="2">0</div>
+          <div class="stat-cap">Internships / Roles</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-cap">Core Projects Built</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-count="3">0</div>
+          <div class="stat-cap">Languages (Python, C, C++)</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-count="100">0</div>
+          <div class="stat-cap">% Hands-on Dev</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATEMENT ===== -->
+    <section class="statement" id="about">
+      <div class="container statement-inner">
+        <div class="statement-left reveal">
+          <h2 class="statement-text selectable" id="statementText" data-selection="Manifesto">
+            <span class="mask-line"><span class="line-inner">BUILD IT.</span></span>
+            <span class="mask-line"><span class="line-inner accent-line">BREAK IT.</span></span>
+            <span class="mask-line"><span class="line-inner">SHIP IT.</span></span>
+          </h2>
+          <p class="statement-desc">
+            Computer Science student and software developer based in Bhiwani, Haryana. Grounded in strong engineering principles from polytechnic diploma through B.Tech at TIT&amp;S Bhiwani, with commercial experience building robust Python backends, clean C/C++ architectures, and high-performance frontend interfaces.
+          </p>
+        </div>
+        <div class="quote-card" id="quoteCard">
+          <p class="quote-text">"Bridging practical polytechnic foundations with advanced computer engineering to build software that actually matters."</p>
+          <span class="quote-attr">— Paramvir Singh · Bhiwani, India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS TABLE ===== -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <p class="section-label reveal"><span class="label-line" aria-hidden="true"></span>Skills &amp; Technologies</p>
+        <table class="skills-table" id="skillsTable" role="table">
+          <tbody id="skillsTableBody"><!-- Rendered from SKILLS array in main.js --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== HOW I WORK ===== -->
+    <section class="process">
+      <div class="container">
+        <p class="section-label reveal"><span class="label-line" aria-hidden="true"></span>How I Work</p>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <span class="step-num">01</span>
+            <h3 class="step-title">Understand</h3>
+            <p class="step-desc">Deconstruct requirements, diagram user journeys, and establish database schema before writing code.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="step-num">02</span>
+            <h3 class="step-title">Build</h3>
+            <p class="step-desc">Write structured, clean, modular code following OOP principles and modern web standards.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="step-num">03</span>
+            <h3 class="step-title">Test</h3>
+            <p class="step-desc">Test edge cases, validate responsive layouts from 360px up, and secure API endpoints.</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="step-num">04</span>
+            <h3 class="step-title">Improve</h3>
+            <p class="step-desc">Profile load times, refactor components, and deploy iteratively with Git version control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="timeline" id="timeline">
+      <div class="container">
+        <p class="section-label reveal"><span class="label-line" aria-hidden="true"></span>Education &amp; Experience</p>
+        <ul class="timeline-list" id="timelineList"><!-- Rendered from TIMELINE array in main.js --></ul>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER CTA ===== -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <h2 class="footer-headline selectable" id="footerHeadline" data-selection="CTA Headline">
+          <span class="mask-line"><span class="line-inner">LET'S WORK</span></span>
+          <span class="mask-line"><span class="line-inner accent-line">TOGETHER<span class="dot">.</span></span></span>
+        </h2>
+        <p class="footer-subtext">Have a project in mind, an opportunity, or just want to connect? My inbox is always open.</p>
+        <div class="footer-links reveal">
+          <a href="mailto:paramvirparmar080304@gmail.com" class="footer-btn" id="emailBtn" aria-label="Send email or click to copy">
+            <span class="btn-bg"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            <span class="btn-text">paramvirparmar080304@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/paramvir-singh-20aa1136a" target="_blank" rel="noopener" class="footer-btn" aria-label="LinkedIn profile">
+            <span class="btn-bg"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/github-param-83-vir" target="_blank" rel="noopener" class="footer-btn" aria-label="GitHub profile">
+            <span class="btn-bg"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <span>GitHub (github-param-83-vir)</span>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Paramvir Singh · Software &amp; Web Developer · Bhiwani, Haryana, India</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
