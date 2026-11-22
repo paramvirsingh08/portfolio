@@ -15,16 +15,16 @@
 const PROJECTS = [
   {
     id: '01',
-    title: 'Smart Library Management System',
-    description: 'Full-stack library circulation system with book tracking, member lifecycle management, and fine automation.',
+    title: 'Smart Library Management System — Automated QR Tracking & Fine Ledger',
+    description: 'Full-stack library circulation system with optical webcam QR scanner, real-time book borrowing/renewals, fine automation, and Chart.js analytics.',
     outcomes: [
-      'Automated book issue / return circulation with instant overdue fine calculation',
-      'Normalized MySQL relational schema with ACID-compliant inventory transactions',
-      'Librarian administrative dashboard built with Python, Flask, and Bootstrap UI'
+      'Live optical HTML5 QR code webcam scanning for instant check-in, check-out, and catalog lookup',
+      'Automated overdue fine calculator (₹5/day) with transaction ledger, payment receipts, and role-based permissions',
+      'Executive analytics dashboard with 6-month volume charts, category distributions, and CSV report export'
     ],
-    tech: ['Python', 'Flask', 'MySQL', 'REST API', 'Bootstrap', 'OOP'],
+    tech: ['Python', 'Flask', 'MySQL', 'Bootstrap 5', 'Chart.js', 'QR Scanner', 'REST API'],
     live: '#',
-    github: 'https://github.com/github-param-83-vir'
+    github: 'https://github.com/paramvirsingh08/smart-library-management-system'
   },
   {
     id: '02',
@@ -41,16 +41,16 @@ const PROJECTS = [
   },
   {
     id: '03',
-    title: 'Solitaire Desktop Utility & ML Pipeline',
-    description: 'Enterprise desktop utility and data analysis pipeline developed during software engineering tenure at Solitaire Infosystems.',
+    title: 'IPL Match Score Predictor — Machine Learning Pipeline & Web App',
+    description: 'End-to-end ML application predicting IPL 2nd-innings scores in real-time, benchmarked across 6 algorithms (Random Forest, XGBoost, Decision Tree, SVM, KNN, Linear Regression).',
     outcomes: [
-      'Engineered standalone desktop graphical management tool with Python and Tkinter GUI architecture',
-      'Integrated local SQL database persistence with parameterized queries and automated record workflows',
-      'Implemented foundational machine learning data preprocessing and classification pipelines'
+      'Trained and benchmarked 6 machine learning models across 200,000+ ball-by-ball IPL match records',
+      'Engineered optimal feature pipeline (run-rate, wickets in hand, venue, team match-up) achieving top performance with Random Forest',
+      'Dual delivery interface: interactive Flask web application and real-time terminal CLI prediction tool'
     ],
-    tech: ['Python', 'Tkinter', 'Flask', 'Machine Learning', 'SQL'],
+    tech: ['Python', 'Scikit-Learn', 'Random Forest', 'XGBoost', 'Flask', 'Pandas', 'NumPy'],
     live: '#',
-    github: 'https://github.com/github-param-83-vir'
+    github: 'https://github.com/paramvirsingh08/ipl-score-predictor'
   },
   {
     id: '04',
@@ -62,8 +62,8 @@ const PROJECTS = [
       'Strictly optimized GPU-accelerated rendering animating only transform, opacity, and filter'
     ],
     tech: ['HTML5', 'CSS3', 'JavaScript', '60fps GPU', 'Design-Tool UI'],
-    live: '#',
-    github: 'https://github.com/github-param-83-vir'
+    live: 'https://paramvirsingh08.github.io/portfolio/',
+    github: 'https://github.com/paramvirsingh08/portfolio'
   }
 ];
 
@@ -147,28 +147,14 @@ function renderProjects() {
 
   grid.innerHTML = PROJECTS.map(p => {
     const isLiveActive = p.live && p.live !== '#';
-    const isSelf = p.id === '04';
 
-    let liveBtn = '';
-    if (isLiveActive) {
-      liveBtn = `
-        <a href="${p.live}" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} live in new tab">
+    const liveBtn = isLiveActive
+      ? `<a href="${p.live}" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} live in new tab">
           ${ICON_EXTERNAL} Live
-        </a>
-      `;
-    } else if (isSelf) {
-      liveBtn = `
-        <a href="#hero" class="project-link" aria-label="Current Portfolio site">
-          ${ICON_EXTERNAL} Current Site
-        </a>
-      `;
-    } else {
-      liveBtn = `
-        <span class="project-link project-link-disabled" title="Live deployment coming soon" style="opacity:0.55; cursor:default; border-style:dashed;">
-          ${ICON_EXTERNAL} Demo Soon
-        </span>
-      `;
-    }
+        </a>`
+      : `<a href="${p.github}#readme" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} documentation and guide">
+          ${ICON_EXTERNAL} Demo / Docs
+        </a>`;
 
     return `
       <article class="project-card reveal" data-selection="Project Card ${p.id}">
