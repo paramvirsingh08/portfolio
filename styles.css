@@ -876,6 +876,28 @@ section {
   transform: translateX(2px);
 }
 
+.project-wip-pill {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px dashed var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  user-select: none;
+}
+.wip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffd45e;
+  box-shadow: 0 0 8px rgba(255, 212, 94, 0.5);
+  display: inline-block;
+}
+
 /* --- STATS STRIP --- */
 .proof {
   border-top: 1px solid var(--border);

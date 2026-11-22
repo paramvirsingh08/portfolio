@@ -23,8 +23,9 @@ const PROJECTS = [
       'Executive analytics dashboard with 6-month volume charts, category distributions, and CSV report export'
     ],
     tech: ['Python', 'Flask', 'MySQL', 'Bootstrap 5', 'Chart.js', 'QR Scanner', 'REST API'],
-    live: '#',
-    github: 'https://github.com/paramvirsingh08/smart-library-management-system'
+    live: null,
+    github: null,
+    badge: 'In Active Development'
   },
   {
     id: '02',
@@ -37,7 +38,8 @@ const PROJECTS = [
     ],
     tech: ['JavaScript', 'HTML5', 'CSS3', 'ExchangeRate API', 'UI/UX'],
     live: 'https://paramvirsingh08.github.io/calcpro/',
-    github: 'https://github.com/paramvirsingh08/calcpro'
+    github: 'https://github.com/paramvirsingh08/calcpro',
+    badge: 'Live on GitHub'
   },
   {
     id: '03',
@@ -49,8 +51,9 @@ const PROJECTS = [
       'Dual delivery interface: interactive Flask web application and real-time terminal CLI prediction tool'
     ],
     tech: ['Python', 'Scikit-Learn', 'Random Forest', 'XGBoost', 'Flask', 'Pandas', 'NumPy'],
-    live: '#',
-    github: 'https://github.com/paramvirsingh08/ipl-score-predictor'
+    live: null,
+    github: null,
+    badge: 'In Active Development'
   },
   {
     id: '04',
@@ -63,7 +66,8 @@ const PROJECTS = [
     ],
     tech: ['HTML5', 'CSS3', 'JavaScript', '60fps GPU', 'Design-Tool UI'],
     live: 'https://paramvirsingh08.github.io/portfolio/',
-    github: 'https://github.com/paramvirsingh08/portfolio'
+    github: 'https://github.com/paramvirsingh08/portfolio',
+    badge: 'Live on GitHub'
   }
 ];
 
@@ -146,15 +150,37 @@ function renderProjects() {
   if (!grid) return;
 
   grid.innerHTML = PROJECTS.map(p => {
-    const isLiveActive = p.live && p.live !== '#';
+    let actionButtons = '';
 
-    const liveBtn = isLiveActive
-      ? `<a href="${p.live}" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} live in new tab">
-          ${ICON_EXTERNAL} Live
-        </a>`
-      : `<a href="${p.github}#readme" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} documentation and guide">
-          ${ICON_EXTERNAL} Demo / Docs
-        </a>`;
+    if (p.live || p.github) {
+      const liveBtn = p.live
+        ? `<a href="${p.live}" class="project-link" target="_blank" rel="noopener" aria-label="View ${p.title} live in new tab">
+            ${ICON_EXTERNAL} Live
+          </a>`
+        : '';
+
+      const githubBtn = p.github
+        ? `<a href="${p.github}" class="project-link" target="_blank" rel="noopener" aria-label="${p.title} on GitHub">
+            ${ICON_GITHUB} GitHub
+          </a>`
+        : '';
+
+      actionButtons = `
+        <div class="project-links">
+          ${liveBtn}
+          ${githubBtn}
+        </div>
+      `;
+    } else {
+      actionButtons = `
+        <div class="project-links">
+          <span class="project-wip-pill" title="Project is actively being built and refined">
+            <span class="wip-dot" aria-hidden="true"></span>
+            In Active Development · Launching Soon
+          </span>
+        </div>
+      `;
+    }
 
     return `
       <article class="project-card reveal" data-selection="Project Card ${p.id}">
@@ -167,12 +193,7 @@ function renderProjects() {
         <div class="project-chips">
           ${p.tech.map(t => `<span class="chip">${t}</span>`).join('')}
         </div>
-        <div class="project-links">
-          ${liveBtn}
-          <a href="${p.github}" class="project-link" target="_blank" rel="noopener" aria-label="${p.title} on GitHub">
-            ${ICON_GITHUB} GitHub
-          </a>
-        </div>
+        ${actionButtons}
       </article>
     `;
   }).join('');
